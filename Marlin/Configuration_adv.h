@@ -851,9 +851,17 @@
 #define DEFAULT_MINIMUMFEEDRATE       0.0     // (mm/s) Minimum feedrate. Set with M205 S.
 #define DEFAULT_MINTRAVELFEEDRATE     0.0     // (mm/s) Minimum travel feedrate. Set with M205 T.
 
-// If defined the movements slow down when the look ahead buffer is only half full
+
+// Minimum time that a segment needs to take as the buffer gets emptied
+#define DEFAULT_MINSEGMENTTIME        20000   // (µs) Set with M205 B.
+
+// Slow down the machine if the lookahead buffer is (by default) half full.
+// Increase the slowdown divisor for larger buffer sizes.
 // (don't use SLOWDOWN with DELTA because DELTA generates hundreds of segments per second)
 //#define SLOWDOWN
+#if ENABLED(SLOWDOWN)
+  #define SLOWDOWN_DIVISOR 2
+#endif
 
 /**
  * XY Frequency limit
@@ -1650,7 +1658,7 @@
 //  #define LIN_ADVANCE_K 0.22    // Unit: mm compression per 1mm/s extruder speed
   #define LIN_ADVANCE_K 0    // Unit: mm compression per 1mm/s extruder speed
   //#define LA_DEBUG            // If enabled, this will generate debug information output over USB.
-  //#define EXPERIMENTAL_SCURVE // Enable this option to permit S-Curve Acceleration
+  #define EXPERIMENTAL_SCURVE // Enable this option to permit S-Curve Acceleration
 #endif
 
 // @section leveling

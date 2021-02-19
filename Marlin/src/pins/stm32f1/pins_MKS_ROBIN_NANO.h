@@ -58,6 +58,9 @@
 #define Z_MIN_PIN                           PA11
 #define Z_MAX_PIN                           PC4
 
+#define FIL_RUNOUT_PIN    PA4  // MT_DET1
+#define FIL_RUNOUT2_PIN   PE6  // MT_DET2
+
 //
 // Steppers
 //

@@ -495,13 +495,13 @@
   #if ENABLED(PID_PARAMS_PER_HOTEND)
     // Specify between 1 and HOTENDS values per array.
     // If fewer than EXTRUDER values are provided, the last element will be repeated.
-    #define DEFAULT_Kp_LIST {  12.88,  12.88 }
-    #define DEFAULT_Ki_LIST {   0.72,   0.72 }
-    #define DEFAULT_Kd_LIST {  57.54,  57.54 }
+    #define DEFAULT_Kp_LIST {  11.56,  11.56 }
+    #define DEFAULT_Ki_LIST {   0.67,   0.67 }
+    #define DEFAULT_Kd_LIST {  49.59,  49.59 }
   #else
-    #define DEFAULT_Kp  12.88
-    #define DEFAULT_Ki   0.72
-    #define DEFAULT_Kd  57.54
+    #define DEFAULT_Kp  11.56
+    #define DEFAULT_Ki   0.67
+    #define DEFAULT_Kd  49.59
   #endif
 #endif // PIDTEMP
 
@@ -540,9 +540,9 @@
 
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp  73.15
-  #define DEFAULT_bedKi  13.83
-  #define DEFAULT_bedKd 257.99
+  #define DEFAULT_bedKp  38.37
+  #define DEFAULT_bedKi   5.91
+  #define DEFAULT_bedKd 166.10
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -1025,36 +1025,6 @@
 // For Z_PROBE_ALLEN_KEY see the Delta example configurations.
 //
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /**
  * Nozzle-to-Probe offsets { X, Y, Z }
  *
@@ -1085,7 +1055,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 0, 0, 0 }
+#define NOZZLE_TO_PROBE_OFFSET { -2.6, -1.5, -18.7 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1135,7 +1105,7 @@
 
 // For M851 give a range for adjusting the Z probe offset
 #define Z_PROBE_OFFSET_RANGE_MIN -40
-#define Z_PROBE_OFFSET_RANGE_MAX 20
+#define Z_PROBE_OFFSET_RANGE_MAX  20
 
 // Enable the M48 repeatability test to test probe accuracy
 #define Z_MIN_PROBE_REPEATABILITY_TEST

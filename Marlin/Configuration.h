@@ -1099,7 +1099,7 @@
 #define Z_CLEARANCE_DEPLOY_PROBE   30 // Z Clearance for Deploy/Stow
 #define Z_CLEARANCE_BETWEEN_PROBES  5 // Z Clearance between probe points
 #define Z_CLEARANCE_MULTI_PROBE     5 // Z Clearance between multiple probes
-#define Z_AFTER_PROBING            30 // Z position after probing is done
+#define Z_AFTER_PROBING           100 // Z position after probing is done
 
 #define Z_PROBE_LOW_POINT          -2 // Farthest distance below the trigger-point to go before stopping
 
@@ -1432,7 +1432,7 @@
  * Commands to execute at the end of G29 probing.
  * Useful to retract or move the Z probe out of the way.
  */
-#define Z_PROBE_END_SCRIPT "G0 Z100 F12000\n G0 X0 Y0 Z100"
+#define Z_PROBE_END_SCRIPT "G0 Z100 F4000\n G0 X0 Y0 Z100"
 
 // @section homing
 

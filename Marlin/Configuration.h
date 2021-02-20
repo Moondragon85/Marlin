@@ -2291,6 +2291,7 @@
  *   Interface:  TFT_INTERFACE_FSMC or TFT_INTERFACE_SPI
  */
 //#define TFT_GENERIC
+#define MKS_ROBIN_TFT32
 
 /**
  * TFT UI - User Interface Selection. Enable one of the following options:
@@ -2333,7 +2334,7 @@
 //
 // ADS7843/XPT2046 ADC Touchscreen such as ILI9341 2.8
 //
-//#define TOUCH_SCREEN
+#define TOUCH_SCREEN
 #if ENABLED(TOUCH_SCREEN)
   #define BUTTON_DELAY_EDIT  70 // (ms) Button repeat delay for edit screens
   #define BUTTON_DELAY_MENU 100 // (ms) Button repeat delay for menus
